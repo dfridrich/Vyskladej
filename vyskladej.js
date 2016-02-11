@@ -1,5 +1,4 @@
 $(function () {
-
     // Prohozeni rozmeru
     $("#switchWidthHeight").click(function () {
         var width = $("#width").val();
@@ -79,7 +78,6 @@ function vyskladej() {
 
     $(".progress-bar-success").css("width", total_used_percent + "%");
     $(".progress-bar-danger").css("width", total_waste_percent + "%");
-
 
 }
 
