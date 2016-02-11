@@ -1,0 +1,23 @@
+#vyskladejCanvas {
+  background: gray;
+  display: block;
+  letter-spacing: 0 !important;
+  box-shadow: inset 0px 0px 20px darkslategray; }
+  #vyskladejCanvas div.element {
+    display: inline-block;
+    border-style: solid;
+    border-color: darkgray;
+    border-right: none;
+    border-bottom: none;
+    background: white;
+    box-shadow: inset 0px 0px 20px silver;
+    margin: 0;
+    box-sizing: content-box;
+    transition: all 500ms;
+    margin-bottom: -5px; }
+    #vyskladejCanvas div.element:hover {
+      background: lightyellow;
+      border-color: darkred;
+      transition: all 500ms; }
+
+/*# sourceMappingURL=vyskladej.css.map */

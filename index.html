@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vyskládej</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vyskladej.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <h1 class="text">Vyskládej</h1>
+        </div>
+        <div class="col-lg-8">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="well well-lg">
+                <form>
+                    <div class="form-group">
+                        <label for="width">Šířka (v cm)</label>
+                        <input type="number" class="form-control" id="width" placeholder="0" value="100" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Výška (v cm)</label>
+                        <input type="number" class="form-control" id="height" placeholder="0" value="50" min="1">
+                    </div>
+                    <p>
+                        <button type="button" id="switchWidthHeight" class="btn btn-xs btn-default">
+                            <i class="fa fa-arrows-v"></i> Prohodit šířku a výšku
+                        </button>
+                    </p>
+                    <div class="form-group">
+                        <label for="pieces">Počet kusů</label>
+                        <input type="number" class="form-control" id="pieces" placeholder="0" value="10" min="1"
+                               max="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Mezera mezi tisky (v cm)</label>
+                        <input type="number" class="form-control" id="gap" placeholder="0" value="0" min="0" max="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Šířka role</label>
+                        <input type="number" class="form-control" id="role" placeholder="0" value="137">
+                    </div>
+                    <div class="btn-group" id="roles">
+                        <button type="button" class="btn btn-default btn-xs">101</button>
+                        <button type="button" class="btn btn-default btn-xs">105</button>
+                        <button type="button" class="btn btn-default btn-xs">127</button>
+                        <button type="button" class="btn btn-default btn-xs">135</button>
+                        <button type="button" class="btn btn-default btn-xs">137</button>
+                        <button type="button" class="btn btn-default btn-xs">152</button>
+                        <button type="button" class="btn btn-default btn-xs">160</button>
+                        <button type="button" class="btn btn-default btn-xs">210</button>
+                        <button type="button" class="btn btn-default btn-xs">250</button>
+                    </div>
+                    <hr>
+                    <p>
+                        <button type="button" class="btn btn-primary btn-lg" id="run">
+                            <i class="fa fa-check"></i>
+                            Vyskládej
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <span id="messages"></span>
+            <div class="hidden" id="infoBox">
+                <table class="table table-condensed table-bordered table-striped table-hover">
+                    <col width="50%">
+                    <col width="25%">
+                    <col width="25%">
+                    <tr>
+                        <th>Celkem materiálu</th>
+                        <td><span id="total_material"></span> m<sup>2</sup>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Celkem využito</th>
+                        <td><span id="total_used"></span> m<sup>2</sup></td>
+                        <td><span id="total_used_percent"></span> %</td>
+                    </tr>
+                    <tr>
+                        <th>Odpad</th>
+                        <td><span id="total_waste"></span> m<sup>2</sup></td>
+                        <td><span id="total_waste_percent"></span> %</td>
+                    </tr>
+                    <tr>
+                        <th>Délka spotřebované role</th>
+                        <td><span id="total_length"></span> cm</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" style="width: 0%">
+                    </div>
+                    <div class="progress-bar progress-bar-danger" style="width: 0%">
+                    </div>
+                </div>
+            </div>
+            <div id="vyskladejCanvas">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vyskladej.js"></script>
+</body>
+</html>
